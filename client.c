@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:01:58 by shonakam          #+#    #+#             */
-/*   Updated: 2024/02/13 19:10:18 by shonakam         ###   ########.fr       */
+/*   Updated: 2024/02/14 12:18:39 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 #include <stdlib.h>
 #include "ft_printf/srcs/ft_printf.h"
 
-#include <stdio.h>
-
 // avoid magic number
 #define BIT_PATTERN_LENGTH 8
-
-static pid_t client_pid;
 
 void	send_signals(unsigned char c, int pid)
 {
@@ -50,7 +46,7 @@ int main(int ac, char **av)
 
 	if (ac == 3)
 	{
-		pid = atoi(av[1]);
+		pid = ft_atoi(av[1]);
 		if (pid < 100)
 			exit(1);
 		i = 0;
